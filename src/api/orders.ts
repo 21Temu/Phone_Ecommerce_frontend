@@ -38,4 +38,18 @@ export async function uploadPaymentProof(
   await api.post(`/orders/${orderId}/pay-proof/`, form, {
     headers: { "Content-Type": "multipart/form-data" },
   });
+}export interface CreateOrderPayload {
+  customer_name: string;
+  customer_email: string;
+  customer_phone: string;
+  shipping_address: string;
+  note?: string;
+  payment_method: "offline" | "chapa"; // <-- ADD THIS
+  items: { variant_id: number; quantity: number }[];
+}
+
+export async function initiateChapaPayment(orderId: number): Promise<{ checkout_url: string }> {
+  // MUST BE api.post, not api.get
+  const { data } = await api.post<{ checkout_url: string }>(`/orders/${orderId}/chapa-initiate/`);
+  return data;
 }
