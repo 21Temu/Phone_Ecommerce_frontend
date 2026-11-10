@@ -31,3 +31,44 @@ body {
 .card {
   @apply bg-white rounded-xl shadow-sm border border-gray-100;
 }
+/* 3D Robot Assistant Button */
+.robot-button {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  animation: robot-float 3s ease-in-out infinite;
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.5),
+    0 0 30px rgba(37, 99, 235, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.robot-button:hover {
+  animation-play-state: paused;
+  transform: scale(1.12) rotateY(12deg) rotateX(8deg);
+  box-shadow:
+    0 0 20px rgba(37, 99, 235, 0.8),
+    0 0 45px rgba(34, 211, 238, 0.5);
+}
+
+.robot-image {
+  animation: robot-rotate 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes robot-float {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg);
+  }
+}
+
+@keyframes robot-rotate {
+  0%, 100% {
+    transform: rotateY(-5deg);
+  }
+  50% {
+    transform: rotateY(5deg);
+  }
+}

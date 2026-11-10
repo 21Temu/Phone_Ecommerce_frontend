@@ -388,44 +388,6 @@ export function Home() {
 
       </section>
 
-
-      {/* ================= FINAL PROMOTIONAL SECTION ================= */}
-
-      <section className="mx-auto max-w-7xl px-5 sm:px-8">
-
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 px-7 py-14 text-center shadow-xl sm:px-14">
-
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-
-          <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-cyan-300/10 blur-3xl" />
-
-          <div className="relative">
-
-            <span className="text-4xl">📱</span>
-
-            <h2 className="mt-5 text-2xl font-extrabold text-white sm:text-4xl">
-              Ready for your next upgrade?
-            </h2>
-
-            <p className="mx-auto mt-4 max-w-xl leading-7 text-blue-100">
-              Explore our smartphone collection and find a device
-              that matches your needs.
-            </p>
-
-            <Link
-              to="/phones"
-              className="mt-8 inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 font-bold text-blue-800 shadow-lg transition hover:-translate-y-1 hover:bg-blue-50"
-            >
-              Start Shopping
-              <span className="text-xl">→</span>
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
-
     </main>
   );
 }
